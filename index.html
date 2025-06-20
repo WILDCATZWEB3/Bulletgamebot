@@ -2,15 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>BulletTrade - Sniper Game</title>
+  <title>BulletTrade - PvP Sniper Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script type="module" src="./game.js"></script>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    canvas {
+      background-color: #222;
+      border: 2px solid limegreen;
+      margin: 15px 0;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #leaderboard {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    #leaderboard h2 {
+      margin: 5px 0;
+      color: gold;
+    }
+  </style>
 </head>
 <body>
-  <h2>🔫 Bullet Sniper Game</h2>
+  <h2>🔫 Bullet Sniper PvP Game</h2>
+
+  <button onclick="window.startFight()">🚀 Start Fight</button>
   <canvas id="gameCanvas" width="300" height="300"></canvas>
-  <button onclick="window.endGame()">💾 Save Score</button>
+  <button onclick="window.endFight()">🛑 End Fight</button>
+
+  <div id="leaderboard"></div>
 </body>
 </html>
